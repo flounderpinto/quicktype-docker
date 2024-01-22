@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
-
+ARG QUICKTYPE_VERSION=23.0.81
 RUN apt update && \
     apt install -y \
        curl && \
@@ -10,7 +10,7 @@ RUN apt update && \
     /tmp/nodesource_setup.sh && \
     apt install -y \
        nodejs && \
-    npm install -g quicktype && \
+    npm install -g quicktype@$QUICKTYPE_VERSION && \
     apt remove -y \
        curl && \
     apt autoremove -y && \
