@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG QUICKTYPE_VERSION=23.0.81
+ARG QUICKTYPE_VERSION=23.0.170
 RUN apt update && \
     apt install -y \
        curl && \
@@ -15,5 +15,3 @@ RUN apt update && \
        curl && \
     apt autoremove -y && \
     rm -rf /var/lib/apt/lists/*
-
-ENTRYPOINT ["quicktype"]
